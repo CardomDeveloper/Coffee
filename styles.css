@@ -1,0 +1,42 @@
+.carousel-inner {
+    max-height: 40rem;
+}
+
+#commentTextarea {
+    resize: none;
+    /* Evita que el textarea sea redimensionable */
+}
+
+.bi-shop {
+    color: chocolate;
+}
+
+.btn-outline-dark {
+    color: white;
+    background-color: chocolate;
+    border: none;
+}
+
+.btn-outline-dark:hover {
+    color: white;
+    background-color: rgb(136, 62, 10);
+    border: none;
+}
+
+#home {
+    color: chocolate;
+    font-weight: bold;
+}
+
+
+/* .typescoffee {
+    color: chocolate;
+} */
+
+.sticky-top {
+    background-color: white;
+}
+
+.social-icons a {
+    color: chocolate;
+}

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #e52d27;
+            color: white;
+            border-radius: 100%;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!------------------------------------------------------------------------------->
+
+    <nav class="navbar navbar-expand-lg bg-dark-tertiary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html"><i class="bi bi-shop"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/index.html" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Products/products.html">Discounts</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Cappuccino</a></li>
+                            <li><a class="dropdown-item" href="#">Latte</a></li>
+                            <li><a class="dropdown-item" href="#">Espresso</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Macchiato</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form>
+                <button class="btn btn-default position-relative" id="cartButton" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    My Cart <i class="bi bi-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!------------------------------------------------------------------------------------->
+    <div class="container mt-5">
+        <div class="row" id="product-gallery">
+            <!-- Productos generados dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">My purchases</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cart-items" class="list-group">
+                        <!-- Productos agregados -->
+                    </ul>
+                    <p id="empty-cart-message" class="text-center" style="display:none;">Your cart is empty</p>
+                </div>
+                <div class="modal-footer">
+                    <p>Total: $<span id="cart-total">0</span></p>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="checkout-button">Shop Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Datos de ejemplo de los productos
+        const products = [{
+            id: 1,
+            name: "American Coffee",
+            price: 50,
+            image: "/Assets/Imgs/americano.jpg",
+            text: "The Best Flavor",
+        }, {
+            id: 2,
+            name: "Capuccino Coffee",
+            price: 30,
+            image: "/Assets/Imgs/capuccino.jpg"
+        }, {
+            id: 3,
+            name: "Latte Coffee",
+            price: 20,
+            image: "/Assets/Imgs/latte.jpg"
+        }, {
+            id: 4,
+            name: "Mocha Coffee",
+            price: 80,
+            image: "/Assets/Imgs/mocha.jpg"
+        }, {
+            id: 5,
+            name: "Mocha Coffee",
+            price: 55,
+            image: "/Assets/Imgs/mocha.jpg"
+        }];
+
+        let cart = [];
+
+        function renderProducts() {
+            const gallery = document.getElementById("product-gallery");
+            gallery.innerHTML = '';
+            products.forEach(product => {
+                const productCard = `
+                <div class="col-md-3 mb-4">
+                    <div class="card">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">$${product.price}</p>
+                            <button class="btn btn-default" onclick="addToCart(${product.id})"> <span style="color:blue;">+</span> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+                gallery.innerHTML += productCard;
+            });
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            cart.push(product);
+            updateCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartCount = document.getElementById("cart-count");
+            const cartItems = document.getElementById("cart-items");
+            const cartTotal = document.getElementById("cart-total");
+            const emptyCartMessage = document.getElementById("empty-cart-message");
+
+            cartCount.innerText = cart.length;
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            if (cart.length === 0) {
+                emptyCartMessage.style.display = 'block'; // Show the "Your cart is empty" message
+            } else {
+                emptyCartMessage.style.display = 'none'; // Hide the message when there are items
+                cart.forEach((product, index) => {
+                    const cartItem = `
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        ${product.name} - $${product.price}
+                        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Delete</button>
+                    </li>
+                `;
+                    cartItems.innerHTML += cartItem;
+                    total += product.price;
+                });
+            }
+
+            cartTotal.innerText = total;
+        }
+
+        document.getElementById("checkout-button").addEventListener("click", () => {
+            if (cart.length === 0) {
+                alert("Your cart is empty. Add some items before checking out.");
+            } else {
+                Swal.fire({
+                    text: `Your total was $${cart.reduce((acc, product) => acc + product.price, 0)}`,
+                    title: 'Purchase Completed!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                cart = [];
+                updateCart();
+            }
+        });
+
+        // Renderizar la galería inicial
+        renderProducts();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row mt-5">
+
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Thought of the Day</h5>
+                    <p>
+                        We offer the best coffee beans, carefully selected to give you a unique experience in every cup. Discover our flavors and feel renewed every day.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Market</a></li>
+                        <li><a href="#">Specials</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Policies -->
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Conditions</a></li>
+                        <li><a href="#">Locations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> 123 Main Street, Guatemala City</li>
+                        <li><i class="bi bi-telephone"></i> +502 5555 5555</li>
+                        <li><i class="bi bi-envelope"></i> contact@AmazingCoffee.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4" style="border-color: #ecf0f1;">
+
+        <!-- Social Media -->
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h6 class="mb-3">Follow us on social networks</h6>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 mt-3">
+            © 2024 Amazing Coffee. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
