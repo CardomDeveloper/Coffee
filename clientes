@@ -1,0 +1,40 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "telefono": "+50212345678",
+      "direccion": {
+        "calle": "Av. Las Américas",
+        "numero": "101",
+        "ciudad": "Ciudad de Guatemala",
+        "pais": "Guatemala"
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "María López",
+      "email": "maria.lopez@example.com",
+      "telefono": "+50287654321",
+      "direccion": {
+        "calle": "Calle del Sol",
+        "numero": "45",
+        "ciudad": "Antigua Guatemala",
+        "pais": "Guatemala"
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos García",
+      "email": "carlos.garcia@example.com",
+      "telefono": "+50211223344",
+      "direccion": {
+        "calle": "Boulevard Liberación",
+        "numero": "77",
+        "ciudad": "Quetzaltenango",
+        "pais": "Guatemala"
+      }
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+    "proveedores": [
+      {
+        "id": 1,
+        "nombre": "Café de Altura S.A.",
+        "contacto": {
+          "nombre": "Luis Gómez",
+          "telefono": "+50212345678",
+          "email": "lgomez@cafedealtura.com"
+        },
+        "direccion": {
+          "calle": "Ruta Nacional 7",
+          "numero": "Km 45",
+          "ciudad": "Huehuetenango",
+          "pais": "Guatemala"
+        },
+        "productos": [
+          "Café molido",
+          "Café en grano"
+        ]
+      },
+      {
+        "id": 2,
+        "nombre": "Distribuidora Dulce Vida",
+        "contacto": {
+          "nombre": "María Torres",
+          "telefono": "+50287654321",
+          "email": "mtorres@dulcevida.com"
+        },
+        "direccion": {
+          "calle": "Calzada Roosevelt",
+          "numero": "123",
+          "ciudad": "Ciudad de Guatemala",
+          "pais": "Guatemala"
+        },
+        "productos": [
+          "Sirope de chocolate",
+          "Sirope de vainilla",
+          "Azúcar"
+        ]
+      },
+      {
+        "id": 3,
+        "nombre": "Lácteos del Valle",
+        "contacto": {
+          "nombre": "Carlos Martínez",
+          "telefono": "+50211223344",
+          "email": "cmartinez@lacteosdelvalle.com"
+        },
+        "direccion": {
+          "calle": "Avenida Reforma",
+          "numero": "45",
+          "ciudad": "Quetzaltenango",
+          "pais": "Guatemala"
+        },
+        "productos": [
+          "Leche",
+          "Crema",
+          "Yogur"
+        ]
+      }
+    ]
+}

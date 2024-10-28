@@ -1,0 +1,44 @@
+{
+  "ingredientes": [
+    {
+      "id": 1,
+      "nombre": "Café molido",
+      "descripcion": "Café tostado y molido, base para la mayoría de las bebidas de café."
+    },
+    {
+      "id": 2,
+      "nombre": "Leche",
+      "descripcion": "Leche entera utilizada para dar cremosidad a las bebidas de café."
+    },
+    {
+      "id": 3,
+      "nombre": "Leche espumada",
+      "descripcion": "Leche vaporizada que se utiliza en bebidas como el cappuccino y el latte."
+    },
+    {
+      "id": 4,
+      "nombre": "Agua caliente",
+      "descripcion": "Utilizada en bebidas como el americano para diluir el café."
+    },
+    {
+      "id": 5,
+      "nombre": "Azúcar",
+      "descripcion": "Endulzante común que se agrega al gusto."
+    },
+    {
+      "id": 6,
+      "nombre": "Sirope de chocolate",
+      "descripcion": "Sirope utilizado en bebidas como el mocha para darle sabor a chocolate."
+    },
+    {
+      "id": 7,
+      "nombre": "Canela",
+      "descripcion": "Especia que se espolvorea sobre algunas bebidas para realzar su sabor."
+    },
+    {
+      "id": 8,
+      "nombre": "Espuma de leche",
+      "descripcion": "Capa de leche espumada que se coloca en la parte superior de algunas bebidas."
+    }
+  ]
+}
