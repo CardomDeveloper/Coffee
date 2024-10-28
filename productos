@@ -1,0 +1,49 @@
+{
+  "cafes": [
+    {
+      "id": 1,
+      "nombre": "Espresso",
+      "descripcion": "Café concentrado con un sabor fuerte y cremoso.",
+      "intensidad": 5,
+      "tipoGrano": "Arábica",
+      "tamaño": "30ml",
+      "precio": 1.50
+    },
+    {
+      "id": 2,
+      "nombre": "Cappuccino",
+      "descripcion": "Café con leche espumada, ideal para una textura cremosa.",
+      "intensidad": 3,
+      "tipoGrano": "Arábica",
+      "tamaño": "150ml",
+      "precio": 3.00
+    },
+    {
+      "id": 3,
+      "nombre": "Latte",
+      "descripcion": "Café suave con leche espumada en una mayor proporción.",
+      "intensidad": 2,
+      "tipoGrano": "Robusta",
+      "tamaño": "240ml",
+      "precio": 3.50
+    },
+    {
+      "id": 4,
+      "nombre": "Americano",
+      "descripcion": "Café diluido con agua caliente para un sabor más ligero.",
+      "intensidad": 3,
+      "tipoGrano": "Arábica",
+      "tamaño": "120ml",
+      "precio": 2.00
+    },
+    {
+      "id": 5,
+      "nombre": "Mocha",
+      "descripcion": "Café con chocolate y leche, de sabor dulce y cremoso.",
+      "intensidad": 4,
+      "tipoGrano": "Arábica",
+      "tamaño": "200ml",
+      "precio": 4.00
+    }
+  ]
+}

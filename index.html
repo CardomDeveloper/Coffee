@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Profesional</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg bg-dark-tertiary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><i class="bi bi-cup-hot-fill fs-4"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/Products/products.html">Coffee</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">HotCakes</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li> -->
+                </ul>
+                <!--  <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button>
+                </form> -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="button">Search</button>
+                </form>
+
+                <div   id="resultados-busqueda"></div>
+            </div>
+        </div>
+    </nav>
+    <!------------------------------------------------------------------------------------->
+    <!--/////////////////////////////////////////////////////-->
+
+    <img id="imagen-cafe" src="https://coffee.alexflipnote.dev/89fUIXNs1W4_coffee.png" alt="Imagen de café">
+
+    <!-------------------CAROUSEL------------>
+    <!--  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/Assets/Imgs/slider_0.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/Assets/Imgs/slider_1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="/Assets/Imgs/slider_2.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+    <!---------------FIN DE CAROUSEL----------->
+    <!---------------------------------SECTION------------------------->
+    <section class="container py-5  mt-5 mb-5">
+        <h2 class="text-center mt-5 mb-5 typescoffee">TYPES OF COFFEE</h2>
+        <div class="row mt-5 ">
+            <div class="col-md-4 ">
+                <div class="card h-100 shadow-sm">
+                    <img src="/Assets/Imgs/espresso.jpg" class="card-img-top" alt="Espresso">
+                    <div class="card-body">
+                        <h5 class="card-title">Espresso</h5>
+                        <p class="card-text">A strong and concentrated coffee, usually served in a small shot, made by forcing hot water through finely-ground coffee beans.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="/Assets/Imgs/americano.jpg" class="card-img-top" alt="Americano">
+                    <div class="card-body">
+                        <h5 class="card-title">Americano</h5>
+                        <p class="card-text">Espresso diluted with hot water, offering a less intense flavor but still rich in taste.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="/Assets/Imgs/capuccino.jpg" class="card-img-top" alt="Cappuccino">
+                    <div class="card-body">
+                        <h5 class="card-title">Cappuccino</h5>
+                        <p class="card-text">Made with equal parts espresso, steamed milk, and milk foam, providing a balanced taste and creamy texture.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="/Assets/Imgs/latte.jpg" class="card-img-top" alt="Latte">
+                    <div class="card-body">
+                        <h5 class="card-title">Latte</h5>
+                        <p class="card-text">A creamy and smooth coffee, made with espresso and a larger amount of steamed milk, topped with a small layer of foam.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="/Assets/Imgs/macchiatto.jpg" class="card-img-top" alt="Macchiato">
+                    <div class="card-body">
+                        <h5 class="card-title">Macchiato</h5>
+                        <p class="card-text">An espresso with a small amount of steamed milk or milk foam, offering a stronger coffee flavor with a light creamy touch.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="/Assets/Imgs/mocha.jpg" class="card-img-top" alt="Mocha">
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha</h5>
+                        <p class="card-text">A combination of espresso, steamed milk, and chocolate syrup, creating a rich, sweet, and indulgent flavor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!---------------------------FINISH SECTION----------------------------------->
+    <!-----------------------TEXTAREA FORM INIT-------------------------------->
+
+
+    <div class="container  mt-5">
+        <div class="row justify-content-center align-items-center centered-row">
+            <div class="col-md-6 col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-body ">
+                        <h5 class="card-title text-center">Write a comment</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email-textarea" placeholder="Mycoffee@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="commentTextarea" class="form-label"></label>
+                                <textarea class="form-control" id="commentTextarea" rows="5" maxlength="600" placeholder="100 word limit...." oninput="limitWords(this)" required></textarea>
+
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-default bi bi-send" style="color: chocolate;">  Send message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------footer init----------------------->
+
+    <!-- Footer -->
+    <footer class="bg-light  py-4 mt-5 " style="margin-top: 50px !important; ">
+        <div class="container">
+            <hr>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <h5 style="color: chocolate;">About Us</h5>
+                    <p>We are passionate about serving the finest coffee in town. Our beans are ethically sourced and roasted in-house to perfection. Come visit us and experience the difference!</p>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4 text-center">
+                    <h5 style="color: chocolate;">Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt-fill"></i> 123 Main Street, Anytown USA</li>
+                        <li><i class="bi bi-telephone-fill"></i> (555) 555-5555</li>
+                        <li><i class="bi bi-envelope-fill"></i> info@ourcoffeeshop.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <h5>Follow Us</h5>
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><a href="#" class="text-success social"><i class="bi bi-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-success social"><i class="bi bi-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="text-success social"><i class="bi bi-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Our Coffee Shop. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-----------------------footer finish---------------------->
+    <!------------------------------------------------------------------------------->
+    <!-- Scripts de Bootstrap -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+    <script src="/functions.js"></script>
+
+</body>
+
+</html>

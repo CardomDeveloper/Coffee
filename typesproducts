@@ -1,0 +1,58 @@
+{
+    "productos": {
+      "cafes": [
+        {
+          "id": 1,
+          "nombre": "Espresso",
+          "descripcion": "Café concentrado con un sabor fuerte y cremoso."
+        },
+        {
+          "id": 2,
+          "nombre": "Cappuccino",
+          "descripcion": "Café con leche espumada, ideal para una textura cremosa."
+        },
+        {
+          "id": 3,
+          "nombre": "Latte",
+          "descripcion": "Café suave con leche espumada en una mayor proporción."
+        }
+      ],
+      "pasteles": [
+        {
+          "id": 1,
+          "nombre": "Pastel de Chocolate",
+          "descripcion": "Bizcocho de chocolate con glaseado de chocolate y decoraciones.",
+          "porciones": 1
+        },
+        {
+          "id": 2,
+          "nombre": "Cheesecake de Frutos Rojos",
+          "descripcion": "Pastel de queso con cubierta de frutos rojos frescos.",
+          "porciones": 1
+        },
+        {
+          "id": 3,
+          "nombre": "Pastel de Zanahoria",
+          "descripcion": "Pastel de zanahoria con glaseado de queso crema.",
+          "porciones": 1
+        }
+      ],
+      "malteadas": [
+        {
+          "id": 1,
+          "nombre": "Malteada de Vainilla",
+          "descripcion": "Malteada cremosa de vainilla."
+        },
+        {
+          "id": 2,
+          "nombre": "Malteada de Chocolate",
+          "descripcion": "Malteada de chocolate con chispas de chocolate."
+        },
+        {
+          "id": 3,
+          "nombre": "Malteada de Fresa",
+          "descripcion": "Malteada de fresa con trozos de fresa natural."
+        }
+      ]
+    }
+  }

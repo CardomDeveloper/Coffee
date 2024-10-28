@@ -1,0 +1,80 @@
+.carousel-inner {
+    max-height: 40rem;
+}
+
+#commentTextarea {
+    resize: none;
+    /* Evita que el textarea sea redimensionable */
+}
+
+.bi-cup-hot-fill {
+    color: chocolate;
+    width: 2rem;
+}
+
+.btn-outline-primary {
+    color: white;
+    background-color: chocolate;
+    border: none;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: rgb(136, 62, 10);
+    border: none;
+}
+
+#home {
+    color: chocolate;
+    font-weight: bold;
+}
+
+
+/* .typescoffee {
+    color: chocolate;
+} */
+
+.sticky-top {
+    background-color: white;
+}
+
+.social-icons a {
+    color: chocolate;
+}
+
+.green-button {
+    background-color: #198754 !important;
+}
+
+.empty-button {
+    background-color: #12c2e9;
+}
+
+.modal-footer {
+    border: none !important;
+}
+
+.dropdown-item:hover {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: chocolate;
+}
+
+.social {
+    color: chocolate !important;
+}
+
+
+/* COFFEE API */
+
+#imagen-cafe {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* filter: blur(5px) brightness(50%); */
+    height: 100%;
+    width: 100%;
+}
